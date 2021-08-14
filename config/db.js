@@ -4,7 +4,7 @@ const connectDB = async()=>{
 
     try{
 
-        const conn = await mongoose.connect('mongodb+srv://Velsiva:siva@cluster0.1epen.mongodb.net/banksystem?retryWrites=true&w=majority',{
+        const conn = await mongoose.connect(process.env.MONGO_URL,{
             useNewUrlParser:true,
             useUnifiedTopology:true,
             useFindAndModify:false

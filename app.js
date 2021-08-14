@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-//method-override
+
 app.use(methodOverride(function (req, res) {
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
       let method = req.body._method
@@ -27,7 +27,7 @@ app.use(methodOverride(function (req, res) {
 app.use(expressLayouts);
 app.set('view engine','ejs');
 
-//static folder
+
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/',require('./routers/index'));
